@@ -92,6 +92,17 @@ function addBookCard()
     const label = document.createElement("label");
     label.textContent = "Read";
 
+    const deleteBook = document.createElement("button");
+    deleteBook.textContent = "X";
+    deleteBook.setAttribute("class", "deleteBook");
+    deleteBook.addEventListener("click", () => {
+        book.remove();
+        let index = myLibrary.indexOf(bookObject);
+        myLibrary.splice(index, 1);
+    });
+
+
+    book.append(deleteBook);
     book.append(title);
     book.append(author);
     book.append(pages);

@@ -8,16 +8,35 @@ body {
 }
 
 main {
-
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+}
 
+h1 {
+    text-align: center;
+    color: #8fbc8f;
+    padding: 5px;
 }
 
 button {
     padding: 10px;
+    margin: 10px;
+    background-color: transparent;
+    border: 1px solid #8fbc8f;
+    color: #8fbc8f;
+}
+
+button:hover {
+    background-color: #8fbc8f;
+    color: #2f4f4f;
 }
 
 input {
@@ -27,10 +46,13 @@ input {
 .bookContainer {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 25%;
-    width: 90vw;
+    flex-basis: 100%;
+    width: 80vw;
+    height: 80vh;
     justify-content: center;
-    background-color: cadetblue;
+    background-color: #6d888a;
+    border-radius: 20px;
+    overflow:auto;
 }
 
 .book {
@@ -44,6 +66,8 @@ input {
     text-align: center;
     margin: 10px;
     box-shadow: 1px 1px 5px #00000063;
+    max-height: 200px;
+    border: 3px solid #2f4f4f;
 }
 
 .book h2 {
@@ -52,4 +76,15 @@ input {
 
 .book p {
     padding: 5px;
+}
+
+.deleteBook {
+    position: relative;
+    color: #2f4f4f;
+    border-color: #2f4f4f;
+    min-width: 25px;
+    min-height: 25px;
+    text-align: center;
+    padding: 3px;
+    align-self: flex-end;
 }

@@ -43,6 +43,11 @@ input {
     margin: 10px;
 }
 
+header label {
+    color: #8fbc8f;
+    margin: 10px;
+}
+
 .bookContainer {
     display: flex;
     flex-wrap: wrap;
@@ -88,3 +93,4 @@ input {
     padding: 3px;
     align-self: flex-end;
 }
+

@@ -44,24 +44,28 @@ function newBookForm()
     const pagesInput = document.createElement("input");
     pagesInput.setAttribute("type", "number");
     pagesInput.setAttribute("placeholder", "Pages");
+    pagesInput.setAttribute("min", 1);
 
     const readInput = document.createElement("input");
     readInput.setAttribute("type", "checkbox");
 
+    const label = document.createElement("label");
+    label.textContent = "Read";
+
     const submit = document.createElement("button");
-    submit.innerText = "Add";
+    submit.textContent = "Add";
     submit.addEventListener("click", () => {
         myLibrary.push(new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked));
         bookForm.remove();
         addBookCard();
         active = false;
     });
-    submit.textContent = "";
 
     bookForm.append(titleInput);
     bookForm.append(authorInput);
     bookForm.append(pagesInput);
     bookForm.append(readInput);
+    bookForm.append(label);
     bookForm.append(submit);
     header.append(bookForm);
 }
@@ -83,10 +87,10 @@ function addBookCard()
     pages.textContent = `Pages: ${bookObject.pages}`;
 
     const read = document.createElement("input");
-    read.setAttribute("checked", bookObject.read);
     read.setAttribute("type", "checkbox");
+    bookObject.read ? read.setAttribute("checked", bookObject.read): false;
     read.addEventListener("change", () => {
-        bookObject.read = read;
+        bookObject.read = read.checked;
     });
 
     const label = document.createElement("label");

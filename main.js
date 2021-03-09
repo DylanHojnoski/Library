@@ -48,6 +48,10 @@ function newBookForm()
 
     const readInput = document.createElement("input");
     readInput.setAttribute("type", "checkbox");
+    readInput.setAttribute("class", "read");
+
+    const checkmark = document.createElement("span");
+    checkmark.setAttribute("class", "checkmark");
 
     const label = document.createElement("label");
     label.textContent = "Read";
@@ -55,17 +59,21 @@ function newBookForm()
     const submit = document.createElement("button");
     submit.textContent = "Add";
     submit.addEventListener("click", () => {
-        myLibrary.push(new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked));
-        bookForm.remove();
-        addBookCard();
-        active = false;
+        if(titleInput.value != "" && authorInput.value != "" && pagesInput.value != "")
+        {
+            myLibrary.push(new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked));
+            bookForm.remove();
+            addBookCard();
+            active = false;
+        }
     });
 
     bookForm.append(titleInput);
     bookForm.append(authorInput);
     bookForm.append(pagesInput);
-    bookForm.append(readInput);
+    label.append(readInput);
     bookForm.append(label);
+    label.append(checkmark);
     bookForm.append(submit);
     header.append(bookForm);
 }
@@ -88,10 +96,14 @@ function addBookCard()
 
     const read = document.createElement("input");
     read.setAttribute("type", "checkbox");
+    read.setAttribute("class", "read");
     bookObject.read ? read.setAttribute("checked", bookObject.read): false;
     read.addEventListener("change", () => {
         bookObject.read = read.checked;
     });
+
+    const checkmark = document.createElement("span");
+    checkmark.setAttribute("class", "checkmark");
 
     const label = document.createElement("label");
     label.textContent = "Read";
@@ -110,7 +122,8 @@ function addBookCard()
     book.append(title);
     book.append(author);
     book.append(pages);
-    book.append(read);
+    label.append(read);
+    label.append(checkmark);
     book.append(label);
     bookcontainer.append(book);
 }

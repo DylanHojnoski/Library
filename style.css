@@ -48,11 +48,29 @@ header label {
     margin: 10px;
 }
 
+.read {
+  height: 15px;
+  width: 15px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.checkmark {
+    background-color: #6d888a;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    position: relative;
+    left: -25px;
+    z-index: -1;
+}
+
 .bookContainer {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 100%;
-    width: 80vw;
+    flex-basis: 80%;
+    width: 60vw;
     height: 80vh;
     justify-content: center;
     background-color: #6d888a;
@@ -92,5 +110,12 @@ header label {
     text-align: center;
     padding: 3px;
     align-self: flex-end;
+}
+
+@media screen and (max-width: 800px)
+{
+    .book {
+        flex-basis:  100%;
+    }
 }
 

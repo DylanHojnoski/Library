@@ -41,6 +41,24 @@ button:hover {
 
 input {
     margin: 10px;
+    padding: 5px;
+    border: 2px solid #8fbc8f;
+    border-radius: 5px;
+    background-color: #6d888a;
+}
+
+::placeholder {
+    color: #000000;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 header label {
@@ -88,9 +106,9 @@ header label {
     flex-basis: 20%;
     text-align: center;
     margin: 10px;
-    box-shadow: 1px 1px 5px #00000063;
+    box-shadow: 5px 5px 5px #00000063;
     max-height: 200px;
-    border: 3px solid #2f4f4f;
+    border: 3px solid #839999;
 }
 
 .book h2 {

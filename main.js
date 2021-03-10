@@ -89,7 +89,7 @@ function addBookCard()
     title.textContent = bookObject.title;
 
     const author = document.createElement("p");
-    author.textContent = `Author: ${bookObject.author}`;
+    author.textContent = `By: ${bookObject.author}`;
 
     const pages = document.createElement("p");
     pages.textContent = `Pages: ${bookObject.pages}`;

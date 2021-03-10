@@ -4,6 +4,7 @@ let active = false;
 const body = document.querySelector("body");
 body.addEventListener("load", addBookToLibrary());
 
+
 function Book(title, author, pages, read)
 {
     this.title = title;
